@@ -1,176 +1,194 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component should render - multiple schema 1`] = `
-<Stack
+<Component
   gutter="md"
 >
-  <StackItem
+  <Component
     key="settings-form-0"
   >
-    <Card>
-      <CardBody>
+    <Component>
+      <Component>
         <FormRenderer
-          buttonClassName=""
-          buttonsLabels={Object {}}
-          canReset={true}
+          FormTemplate={[Function]}
           clearOnUnmount={false}
-          disableSubmit={Array []}
-          formFieldsMapper={
+          componentMapper={
             Object {
               "checkbox": [Function],
               "date-picker": [Function],
-              "dual-list-select": [Function],
+              "dual-list-select": Object {
+                "component": [Function],
+                "renderStatus": [Function],
+              },
               "field-array": [Function],
               "plain-text": [Function],
+              "plain-text-with-links": [Function],
               "radio": [Function],
+              "select": [Function],
               "select-field": [Function],
+              "slider": [Function],
               "sub-form": [Function],
+              "switch": [Function],
               "switch-field": [Function],
               "tabs": [Function],
               "text-field": [Function],
+              "textarea": [Function],
               "textarea-field": [Function],
               "time-picker": [Function],
               "wizard": [Function],
             }
           }
           initialValues={Object {}}
-          layoutMapper={
-            Object {
-              "Button": [Function],
-              "ButtonGroup": [Function],
-              "Description": [Function],
-              "FormWrapper": [Function],
-              "Title": [Function],
-            }
-          }
           onSubmit={[Function]}
           schema={Object {}}
-          showFormControls={true}
+          validatorMapper={
+            Object {
+              "exact-length-validator": [Function],
+              "max-length-validator": [Function],
+              "min-items-validator": [Function],
+              "min-length-validator": [Function],
+              "pattern-validator": [Function],
+              "required-validator": [Function],
+              "url-validator": [Function],
+            }
+          }
         />
-      </CardBody>
-    </Card>
-  </StackItem>
-  <StackItem
+      </Component>
+    </Component>
+  </Component>
+  <Component
     key="settings-form-1"
   >
-    <Card>
-      <CardBody>
+    <Component>
+      <Component>
         <FormRenderer
-          buttonClassName=""
-          buttonsLabels={Object {}}
-          canReset={true}
+          FormTemplate={[Function]}
           clearOnUnmount={false}
-          disableSubmit={Array []}
-          formFieldsMapper={
+          componentMapper={
             Object {
               "checkbox": [Function],
               "date-picker": [Function],
-              "dual-list-select": [Function],
+              "dual-list-select": Object {
+                "component": [Function],
+                "renderStatus": [Function],
+              },
               "field-array": [Function],
               "plain-text": [Function],
+              "plain-text-with-links": [Function],
               "radio": [Function],
+              "select": [Function],
               "select-field": [Function],
+              "slider": [Function],
               "sub-form": [Function],
+              "switch": [Function],
               "switch-field": [Function],
               "tabs": [Function],
               "text-field": [Function],
+              "textarea": [Function],
               "textarea-field": [Function],
               "time-picker": [Function],
               "wizard": [Function],
             }
           }
           initialValues={Object {}}
-          layoutMapper={
-            Object {
-              "Button": [Function],
-              "ButtonGroup": [Function],
-              "Description": [Function],
-              "FormWrapper": [Function],
-              "Title": [Function],
-            }
-          }
           onSubmit={[Function]}
           schema={Object {}}
-          showFormControls={true}
+          validatorMapper={
+            Object {
+              "exact-length-validator": [Function],
+              "max-length-validator": [Function],
+              "min-items-validator": [Function],
+              "min-length-validator": [Function],
+              "pattern-validator": [Function],
+              "required-validator": [Function],
+              "url-validator": [Function],
+            }
+          }
         />
-      </CardBody>
-    </Card>
-  </StackItem>
-</Stack>
+      </Component>
+    </Component>
+  </Component>
+</Component>
 `;
 
 exports[`component should render - no data 1`] = `
-<Stack
+<Component
   gutter="md"
 >
-  <StackItem>
-    <Card>
-      <CardBody>
+  <Component>
+    <Component>
+      <Component>
         <Skeleton
           isDark={false}
           size="lg"
         />
-      </CardBody>
-    </Card>
-  </StackItem>
-</Stack>
+      </Component>
+    </Component>
+  </Component>
+</Component>
 `;
 
 exports[`component should render - no schema 1`] = `
-<Stack
+<Component
   gutter="md"
 />
 `;
 
 exports[`component should render - one schema 1`] = `
-<Stack
+<Component
   gutter="md"
 >
-  <StackItem
+  <Component
     key="settings-form-0"
   >
-    <Card>
-      <CardBody>
+    <Component>
+      <Component>
         <FormRenderer
-          buttonClassName=""
-          buttonsLabels={Object {}}
-          canReset={true}
+          FormTemplate={[Function]}
           clearOnUnmount={false}
-          disableSubmit={Array []}
-          formFieldsMapper={
+          componentMapper={
             Object {
               "checkbox": [Function],
               "date-picker": [Function],
-              "dual-list-select": [Function],
+              "dual-list-select": Object {
+                "component": [Function],
+                "renderStatus": [Function],
+              },
               "field-array": [Function],
               "plain-text": [Function],
+              "plain-text-with-links": [Function],
               "radio": [Function],
+              "select": [Function],
               "select-field": [Function],
+              "slider": [Function],
               "sub-form": [Function],
+              "switch": [Function],
               "switch-field": [Function],
               "tabs": [Function],
               "text-field": [Function],
+              "textarea": [Function],
               "textarea-field": [Function],
               "time-picker": [Function],
               "wizard": [Function],
             }
           }
           initialValues={Object {}}
-          layoutMapper={
-            Object {
-              "Button": [Function],
-              "ButtonGroup": [Function],
-              "Description": [Function],
-              "FormWrapper": [Function],
-              "Title": [Function],
-            }
-          }
           onSubmit={[Function]}
           schema={Object {}}
-          showFormControls={true}
+          validatorMapper={
+            Object {
+              "exact-length-validator": [Function],
+              "max-length-validator": [Function],
+              "min-items-validator": [Function],
+              "min-length-validator": [Function],
+              "pattern-validator": [Function],
+              "required-validator": [Function],
+              "url-validator": [Function],
+            }
+          }
         />
-      </CardBody>
-    </Card>
-  </StackItem>
-</Stack>
+      </Component>
+    </Component>
+  </Component>
+</Component>
 `;
