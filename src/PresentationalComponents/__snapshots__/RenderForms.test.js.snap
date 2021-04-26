@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component should render - multiple schema 1`] = `
-<Component
-  gutter="md"
+<Stack
+  hasGutter={true}
 >
-  <Component
+  <StackItem
     key="settings-form-0"
   >
-    <Component>
-      <Component>
+    <Card>
+      <CardBody>
         <FormRenderer
           FormTemplate={[Function]}
           clearOnUnmount={false}
@@ -17,8 +17,21 @@ exports[`component should render - multiple schema 1`] = `
               "checkbox": [Function],
               "date-picker": [Function],
               "dual-list-select": Object {
+                "availableOptionsActions": Array [
+                  <DualListSortButton
+                    position="left"
+                  />,
+                ],
+                "chosenOptionsActions": Array [
+                  <DualListSortButton
+                    position="right"
+                  />,
+                ],
                 "component": [Function],
-                "renderStatus": [Function],
+                "isFilterable": true,
+                "isSearchable": true,
+                "isSortable": true,
+                "resolveProps": [Function],
               },
               "field-array": [Function],
               "plain-text": [Function],
@@ -41,6 +54,7 @@ exports[`component should render - multiple schema 1`] = `
           initialValues={Object {}}
           onSubmit={[Function]}
           schema={Object {}}
+          submitLabel="Save"
           validatorMapper={
             Object {
               "exact-length-validator": [Function],
@@ -53,14 +67,14 @@ exports[`component should render - multiple schema 1`] = `
             }
           }
         />
-      </Component>
-    </Component>
-  </Component>
-  <Component
+      </CardBody>
+    </Card>
+  </StackItem>
+  <StackItem
     key="settings-form-1"
   >
-    <Component>
-      <Component>
+    <Card>
+      <CardBody>
         <FormRenderer
           FormTemplate={[Function]}
           clearOnUnmount={false}
@@ -69,8 +83,21 @@ exports[`component should render - multiple schema 1`] = `
               "checkbox": [Function],
               "date-picker": [Function],
               "dual-list-select": Object {
+                "availableOptionsActions": Array [
+                  <DualListSortButton
+                    position="left"
+                  />,
+                ],
+                "chosenOptionsActions": Array [
+                  <DualListSortButton
+                    position="right"
+                  />,
+                ],
                 "component": [Function],
-                "renderStatus": [Function],
+                "isFilterable": true,
+                "isSearchable": true,
+                "isSortable": true,
+                "resolveProps": [Function],
               },
               "field-array": [Function],
               "plain-text": [Function],
@@ -93,6 +120,7 @@ exports[`component should render - multiple schema 1`] = `
           initialValues={Object {}}
           onSubmit={[Function]}
           schema={Object {}}
+          submitLabel="Save"
           validatorMapper={
             Object {
               "exact-length-validator": [Function],
@@ -105,44 +133,44 @@ exports[`component should render - multiple schema 1`] = `
             }
           }
         />
-      </Component>
-    </Component>
-  </Component>
-</Component>
+      </CardBody>
+    </Card>
+  </StackItem>
+</Stack>
 `;
 
 exports[`component should render - no data 1`] = `
-<Component
-  gutter="md"
+<Stack
+  hasGutter={true}
 >
-  <Component>
-    <Component>
-      <Component>
+  <StackItem>
+    <Card>
+      <CardBody>
         <Skeleton
           isDark={false}
           size="lg"
         />
-      </Component>
-    </Component>
-  </Component>
-</Component>
+      </CardBody>
+    </Card>
+  </StackItem>
+</Stack>
 `;
 
 exports[`component should render - no schema 1`] = `
-<Component
-  gutter="md"
+<Stack
+  hasGutter={true}
 />
 `;
 
 exports[`component should render - one schema 1`] = `
-<Component
-  gutter="md"
+<Stack
+  hasGutter={true}
 >
-  <Component
+  <StackItem
     key="settings-form-0"
   >
-    <Component>
-      <Component>
+    <Card>
+      <CardBody>
         <FormRenderer
           FormTemplate={[Function]}
           clearOnUnmount={false}
@@ -151,8 +179,21 @@ exports[`component should render - one schema 1`] = `
               "checkbox": [Function],
               "date-picker": [Function],
               "dual-list-select": Object {
+                "availableOptionsActions": Array [
+                  <DualListSortButton
+                    position="left"
+                  />,
+                ],
+                "chosenOptionsActions": Array [
+                  <DualListSortButton
+                    position="right"
+                  />,
+                ],
                 "component": [Function],
-                "renderStatus": [Function],
+                "isFilterable": true,
+                "isSearchable": true,
+                "isSortable": true,
+                "resolveProps": [Function],
               },
               "field-array": [Function],
               "plain-text": [Function],
@@ -175,6 +216,7 @@ exports[`component should render - one schema 1`] = `
           initialValues={Object {}}
           onSubmit={[Function]}
           schema={Object {}}
+          submitLabel="Save"
           validatorMapper={
             Object {
               "exact-length-validator": [Function],
@@ -187,8 +229,8 @@ exports[`component should render - one schema 1`] = `
             }
           }
         />
-      </Component>
-    </Component>
-  </Component>
-</Component>
+      </CardBody>
+    </Card>
+  </StackItem>
+</Stack>
 `;
