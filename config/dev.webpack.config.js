@@ -8,9 +8,6 @@ const { config: webpackConfig, plugins } = config({
   useProxy: true,
   appUrl: `/beta/settings/applications`,
   proxyVerbose: true,
-  routes: {
-    '/api/cost-management/v1/': { host: 'http://localhost:8000' },
-  },
 });
 
 const modulesConfig = require('@redhat-cloud-services/frontend-components-config/federated-modules')(
