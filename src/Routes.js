@@ -7,13 +7,21 @@ const Applications = lazy(() =>
   )
 );
 
+const EdgeSettings = lazy(() =>
+  import(
+    /* webpackChunkName: "ApplicationsPage" */ './PresentationalComponents/edge/EdgeSettings'
+  )
+);
+
 const paths = {
   applications: '/applications/:id',
+  edge: '/applications/edge',
 };
 
 export const Routes = () => {
   return (
     <Switch>
+      <Route exact path={paths.edge} component={EdgeSettings} />
       <Route exact path={paths.applications} component={Applications} />
       <Route render={() => <Redirect to="/applications/insights" />} />
     </Switch>

@@ -13,81 +13,83 @@ import validatorMapper from '@data-driven-forms/react-form-renderer/validator-ma
 import DualListSortButton from '@data-driven-forms/pf4-component-mapper/dual-list-sort-button';
 
 const componentMapperExtended = {
-  ...componentMapper,
-  'switch-field': componentMapper[componentTypes.SWITCH],
-  'textarea-field': componentMapper[componentTypes.TEXTAREA],
-  'select-field': componentMapper[componentTypes.SELECT],
-  'plain-text-with-links': PlainTextWithLinks,
-  [componentTypes.DUAL_LIST_SELECT]: {
-    component: componentMapper[componentTypes.DUAL_LIST_SELECT],
-    isFilterable: true,
-    isSortable: true,
-    isSearchable: true,
-    resolveProps: (props) => ({
-      ...(props.leftTitle && { availableOptionsTitle: props.leftTitle }),
-      ...(props.rightTitle && { chosenOptionsTitle: props.rightTitle }),
-    }),
-    availableOptionsActions: [
-      <DualListSortButton position="left" key="sort" />,
-    ],
-    chosenOptionsActions: [<DualListSortButton position="right" key="sort" />],
-  },
+    ...componentMapper,
+    'switch-field': componentMapper[componentTypes.SWITCH],
+    'textarea-field': componentMapper[componentTypes.TEXTAREA],
+    'select-field': componentMapper[componentTypes.SELECT],
+    'plain-text-with-links': PlainTextWithLinks,
+    [componentTypes.DUAL_LIST_SELECT]: {
+        component: componentMapper[componentTypes.DUAL_LIST_SELECT],
+        isFilterable: true,
+        isSortable: true,
+        isSearchable: true,
+        resolveProps: (props) => ({
+            ...(props.leftTitle && { availableOptionsTitle: props.leftTitle }),
+            ...(props.rightTitle && { chosenOptionsTitle: props.rightTitle }),
+        }),
+        availableOptionsActions: [
+            <DualListSortButton position='left' key='sort' />,
+        ],
+        chosenOptionsActions: [
+            <DualListSortButton position='right' key='sort' />,
+        ],
+    },
 };
 
 const validatorMapperBridge = {
-  'required-validator': validatorMapper[validatorTypes.REQUIRED],
-  'pattern-validator': validatorMapper[validatorTypes.PATTERN],
-  'min-length-validator': validatorMapper[validatorTypes.MIN_LENGTH],
-  'url-validator': validatorMapper[validatorTypes.URL],
-  'max-length-validator': validatorMapper[validatorTypes.MAX_LENGTH],
-  'min-items-validator': validatorMapper[validatorTypes.MIN_ITEMS],
-  'exact-length-validator': validatorMapper[validatorTypes.EXACT_LENGTH],
+    'required-validator': validatorMapper[validatorTypes.REQUIRED],
+    'pattern-validator': validatorMapper[validatorTypes.PATTERN],
+    'min-length-validator': validatorMapper[validatorTypes.MIN_LENGTH],
+    'url-validator': validatorMapper[validatorTypes.URL],
+    'max-length-validator': validatorMapper[validatorTypes.MAX_LENGTH],
+    'min-items-validator': validatorMapper[validatorTypes.MIN_ITEMS],
+    'exact-length-validator': validatorMapper[validatorTypes.EXACT_LENGTH],
 };
 
 const FormTemplateWrapper = (props) => (
-  <FormTemplate {...props} submitLabel="Save" canReset />
+    <FormTemplate {...props} submitLabel='Save' canReset />
 );
 
 const RenderForms = ({ schemas, loaded, saveValues, ...props }) => (
-  <Stack {...props} hasGutter>
-    {loaded ? (
-      schemas.map((schema, i) => (
-        <StackItem key={`settings-form-${i}`}>
-          <Card>
-            <CardBody>
-              <FormRender
-                componentMapper={componentMapperExtended}
-                FormTemplate={FormTemplateWrapper}
-                schema={schema}
-                submitLabel="Save"
-                onSubmit={saveValues}
-                validatorMapper={validatorMapperBridge}
-              />
-            </CardBody>
-          </Card>
-        </StackItem>
-      ))
-    ) : (
-      <StackItem>
-        <Card>
-          <CardBody>
-            <Skeleton size="lg" />
-          </CardBody>
-        </Card>
-      </StackItem>
-    )}
-  </Stack>
+    <Stack {...props} hasGutter>
+        {loaded ? (
+            schemas.map((schema, i) => (
+                <StackItem key={`settings-form-${i}`}>
+                    <Card>
+                        <CardBody>
+                            <FormRender
+                                componentMapper={componentMapperExtended}
+                                FormTemplate={FormTemplateWrapper}
+                                schema={schema}
+                                submitLabel='Save'
+                                onSubmit={saveValues}
+                                validatorMapper={validatorMapperBridge}
+                            />
+                        </CardBody>
+                    </Card>
+                </StackItem>
+            ))
+        ) : (
+            <StackItem>
+                <Card>
+                    <CardBody>
+                        <Skeleton size='lg' />
+                    </CardBody>
+                </Card>
+            </StackItem>
+        )}
+    </Stack>
 );
 
 RenderForms.propTypes = {
-  schemas: PropTypes.arrayOf(PropTypes.shape({})),
-  loaded: PropTypes.bool,
-  appId: PropTypes.string,
-  saveValues: PropTypes.func,
+    schemas: PropTypes.arrayOf(PropTypes.shape({})),
+    loaded: PropTypes.bool,
+    appId: PropTypes.string,
+    saveValues: PropTypes.func,
 };
 
 RenderForms.defaultProps = {
-  saveValues: () => undefined,
+    saveValues: () => undefined,
 };
 
 export default RenderForms;
