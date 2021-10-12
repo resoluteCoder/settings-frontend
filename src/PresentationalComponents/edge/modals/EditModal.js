@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from './Modal';
 
-const EditModal = ({ toggle, isOpen }) => {
+const EditModal = ({ toggle, isOpen, name, baseURL }) => {
     const editSchema = {
         fields: [
             {
@@ -11,7 +11,7 @@ const EditModal = ({ toggle, isOpen }) => {
             },
             {
                 component: 'text-field',
-                name: 'repo-name',
+                name: 'name',
                 label: 'Name',
                 placeholder: 'Repository name',
                 helperText:
@@ -20,7 +20,7 @@ const EditModal = ({ toggle, isOpen }) => {
             },
             {
                 component: 'textarea',
-                name: 'base-url',
+                name: 'baseURL',
                 label: 'BaseURL',
                 placeholder: 'https://',
                 helperText:
@@ -34,9 +34,10 @@ const EditModal = ({ toggle, isOpen }) => {
         <Modal
             title='Edit Repository'
             isOpen={isOpen}
-            toggle={() => toggle('edit')}
+            toggle={() => toggle({ type: 'edit' })}
             submitLabel='Update'
             schema={editSchema}
+            initialValues={{ name, baseURL }}
         />
     );
 };

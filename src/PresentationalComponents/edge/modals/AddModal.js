@@ -34,7 +34,7 @@ const AddModal = ({ isOpen, toggle }) => {
         <Modal
             title='Add Repository'
             isOpen={isOpen}
-            toggle={() => toggle('add')}
+            toggle={() => toggle({ type: 'add' })}
             submitLabel='Add'
             schema={addSchema}
         />

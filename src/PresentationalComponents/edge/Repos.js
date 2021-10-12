@@ -5,6 +5,7 @@ import Table from './Table';
 import AddModal from './modals/AddModal';
 import EditModal from './modals/EditModal';
 import RemoveModal from './modals/RemoveModal';
+import Header from './Header';
 
 const Repos = () => {
     //const repos = [];
@@ -22,17 +23,26 @@ const Repos = () => {
     ];
 
     const [repos, setRepos] = useState(data);
-    const [isModalOpen, setIsModalOpen] = useState({
-        add: false,
-        edit: false,
-        remove: false,
+    const [modalDetails, setModalDetails] = useState({
+        isOpen: {
+            add: false,
+            edit: false,
+            remove: false,
+        },
+        name: '',
+        baseURL: '',
     });
     const [input, setInput] = useState('');
-    const toggle = (type) => {
+    const toggle = ({ type, name = '', baseURL = '' }) => {
         console.log(type);
-        setIsModalOpen((prevState) => ({
+        setModalDetails((prevState) => ({
             ...prevState,
-            [type]: !prevState[type],
+            name,
+            baseURL,
+            isOpen: {
+                ...prevState.isOpen,
+                [type]: !prevState.isOpen[type],
+            },
         }));
     };
     const filteredByName = () =>
@@ -40,11 +50,12 @@ const Repos = () => {
             repo.name.toLowerCase().includes(input.toLowerCase())
         );
 
-    console.log(isModalOpen);
+    console.log(modalDetails);
     return (
         <>
             {repos.length > 0 ? (
                 <>
+                    <Header />
                     <Toolbar openModal={toggle} setInput={setInput} />
                     <Table toggle={toggle} repos={filteredByName()} />
                 </>
@@ -55,7 +66,7 @@ const Repos = () => {
                     body='Add third-party repositories to build RHEL for Edge images with additional packages.'
                     primaryAction={{
                         text: 'Add Repository',
-                        click: () => toggle('add'),
+                        click: () => toggle({ type: 'add' }),
                     }}
                     secondaryActions={[
                         {
@@ -65,9 +76,19 @@ const Repos = () => {
                     ]}
                 />
             )}
-            <AddModal isOpen={isModalOpen.add} toggle={toggle} />
-            <EditModal isOpen={isModalOpen.edit} toggle={toggle} />
-            <RemoveModal isOpen={isModalOpen.remove} toggle={toggle} />
+            <AddModal isOpen={modalDetails.isOpen.add} toggle={toggle} />
+            <EditModal
+                isOpen={modalDetails.isOpen.edit}
+                name={modalDetails.name}
+                baseURL={modalDetails.baseURL}
+                toggle={toggle}
+            />
+            <RemoveModal
+                isOpen={modalDetails.isOpen.remove}
+                name={modalDetails.name}
+                baseURL={modalDetails.baseURL}
+                toggle={toggle}
+            />
         </>
     );
 };

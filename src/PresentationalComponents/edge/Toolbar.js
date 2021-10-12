@@ -33,7 +33,10 @@ const RepoToolbar = ({ openModal, setInput }) => {
                     </InputGroup>
                 </ToolbarItem>
                 <ToolbarItem>
-                    <Button onClick={openModal} variant='primary'>
+                    <Button
+                        onClick={() => openModal({ type: 'add' })}
+                        variant='primary'
+                    >
                         Add Repository
                     </Button>
                 </ToolbarItem>

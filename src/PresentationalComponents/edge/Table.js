@@ -43,12 +43,21 @@ const Table = (props) => {
                                     items: [
                                         {
                                             title: 'Edit',
-                                            onClick: () => props.toggle('edit'),
+                                            onClick: () =>
+                                                props.toggle({
+                                                    type: 'edit',
+                                                    name,
+                                                    baseURL,
+                                                }),
                                         },
                                         {
                                             title: 'Remove',
                                             onClick: () =>
-                                                props.toggle('remove'),
+                                                props.toggle({
+                                                    type: 'remove',
+                                                    name,
+                                                    baseURL,
+                                                }),
                                         },
                                     ],
                                 }}

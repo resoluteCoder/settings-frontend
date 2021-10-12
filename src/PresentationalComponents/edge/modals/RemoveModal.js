@@ -1,7 +1,18 @@
 import React from 'react';
 import Modal from './Modal';
+import { TextContent, Text } from '@patternfly/react-core';
 
-const AddModal = ({ toggle, isOpen }) => {
+const LabelWithText = ({ label, text }) => {
+    return (
+        <TextContent>
+            <Text component={'b'}>{label}</Text>
+            <Text>{text}</Text>
+        </TextContent>
+    );
+};
+
+const RemoveModal = ({ toggle, isOpen, name, baseURL }) => {
+    console.log(name, baseURL);
     const addSchema = {
         fields: [
             {
@@ -13,12 +24,12 @@ const AddModal = ({ toggle, isOpen }) => {
             {
                 component: 'plain-text',
                 name: 'name',
-                label: 'Custom Packages from my company',
+                label: <LabelWithText label='Name' text={name} />,
             },
             {
                 component: 'plain-text',
-                name: 'base-url',
-                label: 'https://omaciel.fedorapeople.org/animals',
+                name: 'baseURL',
+                label: <LabelWithText label='baseURL' text={baseURL} />,
             },
         ],
     };
@@ -27,11 +38,12 @@ const AddModal = ({ toggle, isOpen }) => {
         <Modal
             title='Remove Repository'
             isOpen={isOpen}
-            toggle={() => toggle('remove')}
+            toggle={() => toggle({ type: 'remove' })}
             submitLabel='Remove'
             schema={addSchema}
+            variant='danger'
         />
     );
 };
 
-export default AddModal;
+export default RemoveModal;
